@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guitar Tabs • Play & Learn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🎸Aidan's guitar tabs👅👅</h1>
+    <div id="auth-status">
+      <span id="user-email">Not logged in</span>
+      <button id="logout-btn" hidden>Log out</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- AUTH -->
+  <section id="auth-section">
+  <h2>Login / Sign Up</h2>
+
+  <div class="auth-wrapper">
+    <!-- Left side: the form -->
+    <div class="auth-form">
+      <label>
+        Email
+        <input type="email" id="email" required autocomplete="email" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" id="password" required autocomplete="current-password" />
+      </label>
+
+      <div class="button-group">
+        <button id="login-btn">Login</button>
+        <button id="signup-btn">Sign Up</button>
+      </div>
+    </div>
+
+    <!-- Right side: the image -->
+    <div class="auth-image">
+      <img 
+        src="Static/aidan playing guitar handsomer.jpg" 
+        alt="Guitar player rocking out" 
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+    <!-- ADMIN -->
+    <section id="admin-section" hidden>
+      <h2>Add New Tab (Admin)</h2>
+      <div class="form-grid">
+        <label>
+          Song Title
+          <input type="text" id="title" placeholder="e.g. Wonderwall" />
+        </label>
+        <label>
+          Artist
+          <input type="text" id="artist" placeholder="e.g. Oasis" />
+        </label>
+        <label>
+          Tuning (optional)
+          <input type="text" id="tuning" placeholder="e.g. EADGBE or Drop D" />
+        </label>
+        <label>
+          Tab / Chords
+          <textarea id="content" rows="10" placeholder="Paste your tab here...&#10;Use spaces or | for alignment"></textarea>
+        </label>
+        <button id="add-tab-btn">Add Tab</button>
+      </div>
+    </section>
+
+    <!-- TABS (hidden until logged in) -->
+    <section id="tabs-section" hidden>
+      <h2>All Tabs</h2>
+
+      <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search songs or artists..." autocomplete="off" />
+      </div>
+
+      <div id="tabs-list">
+        <!-- Tabs rendered here by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="static/app.js" defer></script>
+
+</body>
+</html>
